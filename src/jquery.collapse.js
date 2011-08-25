@@ -27,6 +27,7 @@
                 hide: function() { 
                     this.hide();
                 }
+                level_limit: 10,
             };
             var op = $.extend(defaults, options);
             
@@ -102,10 +103,13 @@
                     // Check if header was clicked
                     if(!t.is(op.head)) {
                         // What about link inside header.
-                        if ( t.parent().is(op.head) ) {
-                            t = t.parent();
-                        } else {
-                            return;
+                        limit = op.level_limit;
+                        while(!t.is(op.head) && limit) {
+                          t = t.parent();
+                          limit -= 1;
+                        }
+                        if(!t.is(op.head)) {
+                          return;
                         }
                         e.preventDefault();
                     }

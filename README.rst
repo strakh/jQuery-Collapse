@@ -49,6 +49,7 @@ Options
 * **head** (string) : Elements for clickable headings (default: "h3")
 * **group** (string): Elements containing the collapsable content (default: "ul, div")
 * **cookieName** (string) : Name of cookie used in the plugin. (default: "collapse")
+* **level_limit** (integer) : Parent search level to give up when head clicked (default: 10), less is better, depends on your html.
 
 Browser Support
 ---------------
